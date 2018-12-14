@@ -34,11 +34,14 @@ public class Player {
 
 		int treasureX = 10;
 		int treasureY = 14;
+		
+		int realTreasureX = 2;
+		int realTreasureY = 2;
 		int grinchX = 6;
 		int grinchY = 14;
 
 		int coX = 0;
-		int coY = 0;
+		int coY = 0;		
 
 		System.out
 				.println("The device glows... " + "Required co-ordinates: " + "X: " + treasureX + ", Y: " + treasureY);
@@ -73,21 +76,22 @@ public class Player {
 
 			} else if (direction.equals("west")) {
 				coY = coY - west;
-				treasureX = treasureX + west;
+				treasureY = treasureY + west;
 				System.out.println(
 						"The device glows... " + "Required co-ordinates: " + "X: " + treasureX + ", Y: " + treasureY);
 				System.out.println("The device glows... " + "Current co-ordinates: " + "X: " + coX + ", Y: " + coY);
 
 			}
 
-			if (coX == treasureX && coY == treasureY) {
+			else if (coX == realTreasureX && coY == realTreasureY) {
 				System.out.println("");
 				System.out.println("You see the big glowing red sack with gifts spilling out. ");
 				System.out.print("You quickly dip your hand in to retrieve a gift");
 				System.out.println("You retrieve a... ginger breadman...");
 				System.out.println("Well done! You risked your life for a ginger breadman!");
-				break;
-			} else if (coX == grinchX && coY == grinchY) {
+				break; //I have no idea why this code won't execute.
+			} 
+			else if (coX == grinchX && coY == grinchY) {
 				System.out.println("");
 				System.out.println("~~~~~~~Congratulations!~~~~~~~");
 				System.out.println("You found the grinch!");
